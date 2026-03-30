@@ -12,7 +12,7 @@ public class Enemigo1 extends Enemigo{
 
     // Constructor
     public Enemigo1(int x, int y, int v) throws IOException {
-        super(x,y,ImageIO.read(new File("recursos/malo1")));
+        super(x,y,Placeholder_malo1);
         this.velocidad = v;
     }
 
@@ -24,8 +24,8 @@ public class Enemigo1 extends Enemigo{
 
     public void realizarFrame(){
         if(
-            getX() + this.velocidad > super.juego.getAnchuraPantalla() ||
-            getX() + this.velocidad < super.juego.getAnchuraPantalla()
+            getX() + this.velocidad > this.juego.getAnchuraPantalla() ||
+            getX() + this.velocidad < this.juego.getAnchuraPantalla()
         ){
             this.velocidad = -this.velocidad;
         }
