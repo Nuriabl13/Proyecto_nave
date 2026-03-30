@@ -1,4 +1,6 @@
 package hlanz.juegonaves;
 
-public class Nave {
+import bcp.framework.consola.SpriteGameObject;
+
+public abstract class Nave extends SpriteGameObject {
 }
