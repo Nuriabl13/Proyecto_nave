@@ -25,10 +25,17 @@ public class Enemigo2 extends Enemigo{
     // Métodos
     @Override
     public int getPuntuacion() {
-        return 0;
+        return (int)Math.round(this.velocidad*3);
     }
 
     public void realizarFrame(){
-
+        this.angulo += this.velocidad;
+        if (this.angulo >= 2 * Math.PI) {
+            this.angulo = 0;
+        }
+        int nuevoX = (int) (this.centroX + this.radio * Math.cos(this.angulo));
+        int nuevoY = (int) (this.centroY + this.radio * Math.sin(this.angulo));
+        this.setX(nuevoX);
+        this.setY(nuevoY);
     }
 }
