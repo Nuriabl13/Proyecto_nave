@@ -15,7 +15,7 @@ public abstract class Escena {
 
     protected abstract void añadirObjetosIniciales();
 
-    public void añadir(GameObjetct obj){
+    public void añadir(GameObject obj){
 
     }
 
