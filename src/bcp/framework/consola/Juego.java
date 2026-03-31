@@ -12,14 +12,14 @@ public class Juego {
 
     public void iniciar(Escena e,Resolucion r){
         this.consola=new Consola("Consola",r.getResolucion().width,r.getResolucion().height);
-        this.escena=e;
+        this.setEscena(e);
         this.resolucion=r;
         this.detener=false;
         while (this.detener){
             if(this.consola.getTeclado().teclaPulsada(KeyEvent.VK_ESCAPE)){
-                this.detener=true;
+                this.detener();
             }
-            this.escena.
+            this.escena.ejecutarFrame();
             this.consola.esperarSiguienteFrame();
         }
     }
@@ -30,17 +30,20 @@ public class Juego {
 
     public void setEscena(Escena e){
         this.escena=e;
+        this.escena.juego=this;
+        this.escena.consola=this.consola;
+        this.escena.inicializar();
     }
 
     public void detener(){
-
+        this.detener=true;
     }
 
     public int getAnchuraPantalla(){
-        return 1;
+        return this.resolucion.getResolucion().width;
     }
 
     public int getAlturaPantalla(){
-        return 1;
+        return this.resolucion.getResolucion().height;
     }
 }
