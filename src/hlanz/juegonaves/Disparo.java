@@ -30,6 +30,6 @@ public class Disparo extends SpriteGameObject {
         ){
             this.finalizar();
         }
-
+        // METODO INCOMPLETO
     }
 }
