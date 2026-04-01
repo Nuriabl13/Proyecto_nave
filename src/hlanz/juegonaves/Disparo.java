@@ -30,6 +30,6 @@ public class Disparo extends SpriteGameObject {
         ){
             this.finalizar();
         }
-        // METODO INCOMPLETO
+        // METODO INCOMPLETO (necesita la lista de enemigos de JuegoNaves)
     }
 }
