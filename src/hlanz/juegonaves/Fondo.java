@@ -15,7 +15,7 @@ public class Fondo extends GameObject {
 
     // Constructor
     public Fondo(int vc){
-        this.imagen = Placeholder_fondo;
+        this.imagen = CacheImagenes.getInstancia().getImagen("fondo.png");
         this.camara = new Rectangle();
         this.velocidadCamara = vc;
         this.camaraX = 0;

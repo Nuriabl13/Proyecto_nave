@@ -12,7 +12,7 @@ public class Disparo extends SpriteGameObject {
 
     // Constructor
     public Disparo(int id, int x, int y, int vx, int vy) {
-        super(Placeholder_disparo,x,y);
+        super(CacheImagenes.getInstancia().getImagen("disparo.png"), x,y);
         this.idJugador = id;
         this.vx = vx;
         this.vy = vy;
