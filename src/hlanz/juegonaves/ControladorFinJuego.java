@@ -2,7 +2,7 @@ package hlanz.juegonaves;
 
 import bcp.framework.consola.GameObject;
 
-public class ControladorFinJuego  extends GameObject {
+public class ControladorFinJuego extends GameObject {
 
     // Constructor
     public ControladorFinJuego(){
@@ -11,7 +11,9 @@ public class ControladorFinJuego  extends GameObject {
     // Métodos
     @Override
     public void ejecutarFrame() {
-        // METODO INCOMPLETO (necesita la lista de enemigos de JuegoNaves)
+        if(JuegoNaves.getEnemigos().isEmpty()){
+            this.juego.detener();
+        }
     }
 
     @Override

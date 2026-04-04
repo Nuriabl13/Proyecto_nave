@@ -21,7 +21,7 @@ public class Marcador extends GameObject {
         this.puntos = new int[]{0,0};
     }
 
-    public void incrementarPuntos(int jugador, int puntos) throws IllegalAccessException {
+    public static void incrementarPuntos(int jugador, int puntos) throws IllegalAccessException {
         // JUGADOR 1 == 0  |  JUGADOR 2 == 1
         if(puntos >= 0) {
             if (jugador == 0) {

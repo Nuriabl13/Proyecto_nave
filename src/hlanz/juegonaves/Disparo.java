@@ -19,7 +19,7 @@ public class Disparo extends SpriteGameObject {
     }
 
     // Métodos
-    public void realizarFrame(){
+    public void realizarFrame() throws IllegalAccessException {
         this.moverX(vx);
         this.moverY(vy);
         if(
@@ -30,6 +30,19 @@ public class Disparo extends SpriteGameObject {
         ){
             this.finalizar();
         }
-        // METODO INCOMPLETO (necesita la lista de enemigos de JuegoNaves)
+        for(int i = 0; i<JuegoNaves.getEnemigos().size(); i++){
+            boolean colisionX =
+                    this.getX() < JuegoNaves.getEnemigos().get(i).getX() + JuegoNaves.getEnemigos().get(i).getAnchura() &&
+                    this.getX() + this.getAnchura() > JuegoNaves.getEnemigos().get(i).getX();
+            boolean colisionY =
+                    this.getY() < JuegoNaves.getEnemigos().get(i).getY() + JuegoNaves.getEnemigos().get(i).getAltura() &&
+                    this.getY() + this.getAltura() > JuegoNaves.getEnemigos().get(i).getY();
+            if (colisionX && colisionY) {
+                this.escena.retirar(this);
+                this.escena.retirar(JuegoNaves.getEnemigos().get(i));
+
+                Marcador.incrementarPuntos(this.idJugador, JuegoNaves.getEnemigos().get(i).getPuntuacion());
+            }
+        }
     }
 }

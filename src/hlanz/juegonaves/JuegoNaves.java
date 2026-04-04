@@ -17,7 +17,7 @@ public class JuegoNaves extends Escena {
     List<Enemigo> enemigos;
 
     //getters
-    public List<Enemigo> getEnemigos() {
+    public static List<Enemigo> getEnemigos() {
         return Collections.unmodifiableList(this.enemigos);
     }
 
