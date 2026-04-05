@@ -8,17 +8,18 @@ import bcp.framework.consola.Resolucion;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class JuegoNaves extends Escena {
-    //variables de instancia
-    List<Enemigo> enemigos;
+    //variables de la clase
+    private static List<Enemigo> enemigos = new ArrayList<>();
 
     //getters
     public static List<Enemigo> getEnemigos() {
-        return Collections.unmodifiableList(this.enemigos);
+        return Collections.unmodifiableList(JuegoNaves.enemigos);
     }
 
     //métodos del padre
@@ -26,14 +27,14 @@ public class JuegoNaves extends Escena {
     public void añadir(GameObject obj) {
         super.añadir(obj);
         if (obj instanceof Enemigo) {
-            this.enemigos.add((Enemigo)obj);
+            JuegoNaves.enemigos.add((Enemigo)obj);
         }
     }
     @Override
     public void retirar(GameObject obj) {
         super.retirar(obj);
         if (obj instanceof Enemigo) {
-            this.enemigos.remove((Enemigo)obj);
+            JuegoNaves.enemigos.remove((Enemigo)obj);
         }
     }
 

@@ -8,26 +8,26 @@ import java.util.ArrayList;
 
 public class Marcador extends GameObject {
     // Variables
-    private int[] puntos;
+    private static int[] puntos;
 
     // Constructor
     public Marcador(){
-        this.puntos = new int[]{0,0};
+        Marcador.puntos = new int[]{0,0};
     }
 
     // Métodos
     @Override
     public void inicializar() {
-        this.puntos = new int[]{0,0};
+        Marcador.puntos = new int[]{0,0};
     }
 
     public static void incrementarPuntos(int jugador, int puntos) throws IllegalAccessException {
         // JUGADOR 1 == 0  |  JUGADOR 2 == 1
         if(puntos >= 0) {
             if (jugador == 0) {
-                this.puntos[0] += puntos;
+                Marcador.puntos[0] += puntos;
             } else if (jugador == 1) {
-                this.puntos[1] += puntos;
+                Marcador.puntos[1] += puntos;
             } else {
                 throw new IllegalAccessException("ERROR: Número de JUGADOR INCORRECTO. J1 = 0, J2 = 1");
             }
@@ -41,7 +41,7 @@ public class Marcador extends GameObject {
         CapaCanvas cc = this.consola.getCapaCanvas();
         Graphics g = cc.getGraphics();
         g.drawString(
-                "J1 : "+this.puntos[0]+"   |   J2 : "+this.puntos[1],
+                "J1 : "+Marcador.puntos[0]+"   |   J2 : "+Marcador.puntos[1],
                 this.juego.getAnchuraPantalla()/2-30,0
         );
     }
