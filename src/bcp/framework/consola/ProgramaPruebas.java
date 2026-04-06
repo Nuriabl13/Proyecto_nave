@@ -8,12 +8,14 @@ import java.io.IOException;
 
 public class ProgramaPruebas {
     public static void main(String[] args){
-        File f = new File("/recursos/nave1.png");
+        File f = new File("recursos/nave1.png");
         try {
             BufferedImage image = ImageIO.read(f);
-            SpriteGameObjectTesteador st = new SpriteGameObjectTesteador(image,100,100);
             Juego juego = new Juego();
-            juego.setEscena(st.escena);
+            EscenaTesteadora e = new EscenaTesteadora();
+            juego.iniciar(e,Resolucion.PANTALLA_COMPLETA);
+            SpriteGameObjectTesteador st = new SpriteGameObjectTesteador(image,100,100);
+            st.ejecutarFrame();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
