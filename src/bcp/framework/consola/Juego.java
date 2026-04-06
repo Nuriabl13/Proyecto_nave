@@ -15,7 +15,7 @@ public class Juego {
         this.setEscena(e);
         this.resolucion=r;
         this.detener=false;
-        while (this.detener){
+        while (!this.detener){
             if(this.consola.getTeclado().teclaPulsada(KeyEvent.VK_ESCAPE)){
                 this.detener();
             }

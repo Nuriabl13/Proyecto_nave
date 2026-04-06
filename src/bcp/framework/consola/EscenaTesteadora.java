@@ -29,4 +29,16 @@ public class EscenaTesteadora extends Escena {
         super.inicializar();
         this.tester.inicializar();
     }
+
+    @Override
+    public void finalizar(){
+        super.finalizar();
+        this.tester.finalizar();
+    }
+
+    @Override
+    public void ejecutarFrame(){
+        super.ejecutarFrame();
+        this.tester.ejecutarFrame();
+    }
 }

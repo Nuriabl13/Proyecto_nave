@@ -10,16 +10,11 @@ public class JuegoTest {
         EscenaTesteadora et=new EscenaTesteadora();
         Juego j=new Juego();
         j.iniciar(et,Resolucion.VENTANA_VGA);
-        try {
-            Thread.sleep(2000);
-            j.detener();
-            boolean funciona=false;
-            if(et.getFrameCounter()>=110 && et.getFrameCounter()<=130){
-                funciona=true;
-            }
-            assertTrue(funciona);
-        } catch (InterruptedException e) {
-            System.out.println("ERROR: "+e.getMessage());;
+        j.detener();
+        boolean funciona=false;
+        if(et.getFrameCounter()>=110 && et.getFrameCounter()<=130){
+            funciona=true;
         }
+        assertTrue(funciona);
     }
 }
