@@ -39,6 +39,10 @@ public class Juego {
         this.detener=true;
     }
 
+    public Resolucion getResolucion(){
+        return this.resolucion;
+    }
+
     public int getAnchuraPantalla(){
         return this.resolucion.getResolucion().width;
     }
