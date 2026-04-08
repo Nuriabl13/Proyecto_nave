@@ -16,6 +16,7 @@ import java.util.Random;
 public class JuegoNaves extends Escena {
     //variables de la clase
     private static List<Enemigo> enemigos = new ArrayList<>();
+    static Juego juego = new Juego();
 
     //getters
     public static List<Enemigo> getEnemigos() {
@@ -44,7 +45,7 @@ public class JuegoNaves extends Escena {
         this.añadir(new ControladorFinJuego());
         this.añadir(new Fondo(5));
         this.añadir(new Nave1(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W));
-        this.añadir(new Nave1(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP));
+        this.añadir(new Nave2(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP));
         Random r = new Random();
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         try {
@@ -75,7 +76,6 @@ public class JuegoNaves extends Escena {
     //programa
     public static void main(String[] args) {
         JuegoNaves jn = new JuegoNaves();
-        jn.añadirObjetosIniciales();
-        jn.juego.iniciar(jn, Resolucion.VENTANA_FULLHD);
+        JuegoNaves.juego.iniciar(jn, Resolucion.VENTANA_FULLHD);
     }
 }

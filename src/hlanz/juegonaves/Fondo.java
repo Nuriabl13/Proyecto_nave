@@ -26,7 +26,7 @@ public class Fondo extends GameObject {
     // Métodos
     @Override
     public void inicializar() {
-        this.camara = new Rectangle(0,0,this.juego.getAnchuraPantalla(),this.juego.getAlturaPantalla());
+        this.camara = new Rectangle(0,0,JuegoNaves.juego.getAnchuraPantalla(),JuegoNaves.juego.getAlturaPantalla());
     }
 
     @Override

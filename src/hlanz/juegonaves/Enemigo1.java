@@ -12,7 +12,7 @@ public class Enemigo1 extends Enemigo{
 
     // Constructor
     public Enemigo1(int x, int y, int v) throws IOException {
-        super(x,y,CacheImagenes.getInstancia().getImagen("malo1.png"));
+        super(x,y,CacheImagenes.getInstancia().getImagen("recursos/malo1.png"));
         this.velocidad = v;
     }
 

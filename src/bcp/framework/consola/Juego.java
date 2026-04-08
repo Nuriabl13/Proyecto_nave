@@ -14,6 +14,7 @@ public class Juego {
         this.consola=new Consola("Consola",r.getResolucion().width,r.getResolucion().height);
         this.setEscena(e);
         this.resolucion=r;
+        e.añadirObjetosIniciales();
         this.detener=false;
         while (!this.detener){
             if(this.consola.getTeclado().teclaPulsada(KeyEvent.VK_ESCAPE)){

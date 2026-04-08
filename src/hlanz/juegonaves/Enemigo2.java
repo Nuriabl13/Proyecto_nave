@@ -14,7 +14,7 @@ public class Enemigo2 extends Enemigo{
 
     // Constructor
     public Enemigo2(int x, int y, int cx, int cy, int r, int v) throws IOException {
-        super(x,y,CacheImagenes.getInstancia().getImagen("malo2.png"));
+        super(x,y,CacheImagenes.getInstancia().getImagen("recursos/malo2.png"));
         this.centroX = cx;
         this.centroY = cy;
         this.radio = r;
