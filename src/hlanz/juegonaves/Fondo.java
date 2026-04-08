@@ -1,6 +1,7 @@
 package hlanz.juegonaves;
 
 import bcp.framework.consola.GameObject;
+import bcp.framework.consola.Juego;
 import bpc.daw.consola.CapaCanvas;
 
 import java.awt.*;
@@ -15,7 +16,7 @@ public class Fondo extends GameObject {
 
     // Constructor
     public Fondo(int vc){
-        this.imagen = CacheImagenes.getInstancia().getImagen("fondo.png");
+        this.imagen = CacheImagenes.getInstancia().getImagen("recursos/fondo.png");
         this.camara = new Rectangle();
         this.velocidadCamara = vc;
         this.camaraX = 0;

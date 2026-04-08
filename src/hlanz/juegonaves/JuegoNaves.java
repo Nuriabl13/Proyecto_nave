@@ -43,8 +43,8 @@ public class JuegoNaves extends Escena {
     protected void añadirObjetosIniciales() {
         this.añadir(new ControladorFinJuego());
         this.añadir(new Fondo(5));
-        this.añadir(new Nave1(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_S));
-        this.añadir(new Nave1(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_DOWN));
+        this.añadir(new Nave1(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W));
+        this.añadir(new Nave1(KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP));
         Random r = new Random();
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         try {
@@ -74,7 +74,8 @@ public class JuegoNaves extends Escena {
 
     //programa
     public static void main(String[] args) {
-        Juego j = new Juego();
-        j.iniciar(new JuegoNaves(), Resolucion.VENTANA_FULLHD);
+        JuegoNaves jn = new JuegoNaves();
+        jn.añadirObjetosIniciales();
+        jn.juego.iniciar(jn, Resolucion.VENTANA_FULLHD);
     }
 }
